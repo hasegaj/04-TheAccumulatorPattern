@@ -305,7 +305,7 @@ def count_sines_vs_cosines(m):
 
     # -------------------------------------------------------------------------
     # DO: 7. Implement and test this function.
-    #   Note that you should write its TEST function first (above).
+    #   Note that you should write its TEST function first (Above).
     #
     # IMPORTANT: As in previous problems in this session,
     #   you must NOT use the 2 or 3-parameter versions
