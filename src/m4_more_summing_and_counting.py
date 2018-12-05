@@ -134,7 +134,7 @@ def sum_from(m, n):
 def run_test_factorial():
     """ Tests the   factorial   function. """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # DO: 4. Implement this TEST function.
     #   It TESTS the  factorial  function defined below.
     #   Include at least **   5   ** tests (we wrote two for you).
     #
@@ -166,7 +166,26 @@ def run_test_factorial():
     # Below this comment, add 3 more test cases, at least two of which
     #   ** uses  math.factorial  as an ORACLE for testing. **
     # -------------------------------------------------------------------------
-
+    # test 3
+    answer_from_oracle = math.factorial(4)
+    answer_from_my_code = factorial(4)
+    print('test 3 expected (oracle):', answer_from_oracle)
+    print('     actual (code):  ', answer_from_my_code)
+    # test 4
+    answer_from_oracle = math.factorial(9)
+    answer_from_my_code = factorial(9)
+    print('test 4 expected (oracle):', answer_from_oracle)
+    print('     actual (code):  ', answer_from_my_code)
+    # test 5
+    answer_from_oracle = math.factorial(16)
+    answer_from_my_code = factorial(16)
+    print('test 5 expected (oracle):', answer_from_oracle)
+    print('     actual (code):  ', answer_from_my_code)
+    # test 6
+    answer_from_oracle = math.factorial(25)
+    answer_from_my_code = factorial(25)
+    print('test 6 expected (oracle):', answer_from_oracle)
+    print('     actual (code):  ', answer_from_my_code)
 
 def factorial(n):
     """
@@ -178,18 +197,21 @@ def factorial(n):
         factorial(0) returns 1 (by definition).
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DO: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT:  Your solution MUST
     #   use an explicit    for ... in range(...):     statement.
     # -------------------------------------------------------------------------
-
+    b = 1
+    for k in range(n):
+        b = b*(k + 1)
+    return b
 
 def run_test_count_cosines_from():
     """ Tests the   count_cosines_from   function. """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement this TEST function.
+    # DO: 6. Implement this TEST function.
     #   It TESTS the  count_cosines_from  function defined below.
     #   Include at least **   6   ** tests (we wrote one for you).
     #              ** Yes, 6 (six) tests. **
@@ -227,6 +249,31 @@ def run_test_count_cosines_from():
     # TO DO: 6 (continued).
     # Below this comment, add 5 more test cases of your own choosing.
     # -------------------------------------------------------------------------
+    # test 2
+    expected = 0
+    answer = count_cosines_from(4, 7, .5)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+    # test 3
+    expected = 0
+    answer = count_cosines_from(3, 5, .45)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
+    # test 4
+    expected = 3
+    answer = count_cosines_from(3, 8, .23)
+    print('Test 4 expected:', expected)
+    print('       actual:  ', answer)
+    # test 5
+    expected = 4
+    answer = count_cosines_from(3, 9, -.2)
+    print('Test 5 expected:', expected)
+    print('       actual:  ', answer)
+    # test 6
+    expected = 2
+    answer = count_cosines_from(6, 9, 0)
+    print('Test 6 expected:', expected)
+    print('       actual:  ', answer)
 
 
 def count_cosines_from(m, n, x):
@@ -248,8 +295,16 @@ def count_cosines_from(m, n, x):
       -- count_cosines_from(3, 9, 0.27)  returns  3
       -- count_cosines_from(4, 8, -0.5)  returns  4
     """
+    t = 0
+    for k in range((n + 1) - m):
+        g = math.cos(m + k)
+
+        if g > x:
+            t = t + 1
+    return t
+
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DO: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT: As in previous problems in this session,
@@ -261,7 +316,7 @@ def count_cosines_from(m, n, x):
 def run_test_sum_unit_fractions_from():
     """ Tests the   sum_unit_fractions_from   function. """
     # -------------------------------------------------------------------------
-    # TODO: 8. Implement this TEST function.
+    # DO: 8. Implement this TEST function.
     #   It TESTS the  sum_unit_fractions_from  function defined below.
     #   Include at least **   3   ** tests (we wrote one for you).
     # Use the same 4-step process as for previous TEST functions.
@@ -281,7 +336,16 @@ def run_test_sum_unit_fractions_from():
     # TO DO: 8 (continued).
     # Below this comment, add 2 more test cases of your own choosing.
     # -------------------------------------------------------------------------
-
+    # test 2
+    expected = 0.8333  # This is APPROXIMATELY the correct answer.
+    answer = sum_unit_fractions_from(2, 3)
+    print('Test 2 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
+    # test 3
+    expected = 6.853 # This is APPROXIMATELY the correct answer.
+    answer = sum_unit_fractions_from(10, 9000)
+    print('Test 3 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
 
 def sum_unit_fractions_from(m, n):
     """
@@ -295,8 +359,14 @@ def sum_unit_fractions_from(m, n):
          which is about 0.545635
       -- sum_unit_fractions_from(10, 9000)  returns about  6.853
     """
+    y = 0
+    for k in range(n + 1):
+        if n >= (m + k):
+            y = y + (1/(m + k))
+
+    return y
     # -------------------------------------------------------------------------
-    # TODO: 9. Implement and test this function.
+    # DO: 9. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT: As in previous problems in this session,
