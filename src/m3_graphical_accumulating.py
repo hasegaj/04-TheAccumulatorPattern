@@ -191,7 +191,7 @@ def draw_lines(n, point, window):
         h = h + (k*r)
     window.render()
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DO: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
